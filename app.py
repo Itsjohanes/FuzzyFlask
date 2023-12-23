@@ -276,6 +276,10 @@ connection = pymysql.connect(
     cursorclass=pymysql.cursors.DictCursor
 )
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 #route untuk dimensi
 @app.route('/dimensi')
 def dimensi():
@@ -376,6 +380,9 @@ def baterai():
     except Exception as e:
         # Log or print the error for debugging
         print(f"Error: {e}")
+
+
+
 
 @app.route('/belakang')
 def belakang():
